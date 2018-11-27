@@ -1,0 +1,17 @@
+<% content_for :browser_title, "Iron - Reset Password" %>
+<% content_for :page_header, "Reset Password" %>
+<% content_for :page_types, :splash %>
+
+<%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true %>
+  </div>
+
+  <section class="call-to-action btn-group">
+    <%= f.submit "Reset", class: "btn btn-link link-primary" %>
+    <%= render "accounts/shared/links" %>
+  </section>
+<% end %>

@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title><%= yield(:browser_title) %></title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+    <script defer src="https://use.fontawesome.com/releases/v5.0.1/js/all.js"></script>
+  </head>
+
+  <body>
+    <main id="application" class="page <%= Array(yield(:page_types)).join(" ") %>">
+      <section class="container">
+        <h1 class="page-title">
+          <strong><%= yield(:page_header) %></strong>
+        </h1>
+        <%= yield %>
+      </section>
+    </main>
+  </body>
+</html>

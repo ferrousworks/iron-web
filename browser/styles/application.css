@@ -1,0 +1,21 @@
+@import "./variables.css";
+/* @import "./reset.css"; */
+/* @import "./bootstrap.css"; */
+@import "./ui.css";
+@import "./pages.css";
+
+html, body {
+  height: 100%;
+}
+
+main#application {
+  padding-top: 25px;
+  height: 100%;
+}
+
+main#application.page.splash {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}

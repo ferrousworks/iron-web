@@ -1,0 +1,34 @@
+{
+  "name": "iron-web",
+  "version": "1.0.0",
+  "description": "The CMS that will manage the ferrousworks business data",
+  "keywords": [],
+  "contributors": [
+    {
+      "name": "Kurtis Rainbolt-Greene",
+      "email": "kurtis@rainbolt-greene.online",
+      "url": "https://kurtis.rainbolt-greene.online"
+    }
+  ],
+  "license": "MIT",
+  "homepage": "https://github.com/ferrousworks/iron-web#readme",
+  "repository": "github:ferrousworks/iron-web",
+  "bugs": "https://github.com/ferrousworks/iron-web/issues",
+  "engines": {
+    "node": "8.11.2",
+    "npm": "6.0.1"
+  },
+  "scripts": {
+    "build": "parcel --out-dir public/ --cache-dir tmp/parcel/ browser/styles/application.css",
+    "watch": "webpack --watch",
+    "book": "start-storybook -p 9001 -c .storybook"
+  },
+  "devDependencies": {
+    "@storybook/addon-actions": "3.4.10",
+    "@storybook/cli": "3.4.10",
+    "autoprefixer": "^9.3.1",
+    "parcel-bundler": "1.10.3",
+    "postcss-modules": "^1.4.1"
+  },
+  "dependencies": {}
+}

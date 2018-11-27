@@ -1,0 +1,18 @@
+<% content_for :browser_title, "Iron" %>
+<% content_for :page_header, "Iron" %>
+<% content_for :page_types, :splash %>
+
+<blockquote class="blockquote">
+  <p>
+    Welcome.
+  </p>
+</blockquote>
+
+<section class="call-to-actions btn-group">
+  <%= link_to "Sign up", new_account_registration_url(), class: "btn btn-link link-primary" %>
+  <%= link_to "Login", new_account_session_url(), class: "btn btn-link link-primary" %>
+</section>
+
+<picture>
+  <%= image_tag image_path("logo.png") %>
+</picture>

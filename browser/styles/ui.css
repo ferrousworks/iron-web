@@ -1,0 +1,13 @@
+.btn-primary {
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+
+.link-primary {
+  text-decoration: underline var(--secondary);
+}
+
+.btn-primary:hover {
+  background-color: var(--pink);
+  border-color: var(--pink);
+}

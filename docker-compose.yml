@@ -1,0 +1,30 @@
+version: "3.7"
+
+services:
+  postgres:
+    image: postgres:10.5-alpine
+    ports:
+      - "5432:5432"
+    volumes:
+      - "./volumes/initializers/postgres/setup.sql:/docker-entrypoint-initdb.d/setup.sql:ro"
+      - "./volumes/data/postgres:/var/lib/postgresql/data:rw"
+      # - "./volumes/settings/postgres/pg_hba.conf:/var/lib/postgresql/data/pg_hba.conf"
+      # - "./volumes/settings/postgres/pg_ident.conf:/var/lib/postgresql/data/pg_ident.conf"
+      # - "./volumes/settings/postgres/postgresql.conf:/var/lib/postgresql/data/postgresql.conf"
+
+  redis:
+    image: redis:4.0.11-alpine
+    volumes:
+      - "./volumes/data/redis:/data:rw"
+    ports:
+      - "6379:6379"
+
+  nginx-proxy:
+    image: jwilder/nginx-proxy:alpine
+    ports:
+      - "80:80"
+    volumes:
+      - "./volumes/settings/nginx-proxy:/etc/nginx/conf.d/:rw"
+      - "/var/run/docker.sock:/tmp/docker.sock:ro"
+    environment:
+      ENABLE_IPV6: "true"

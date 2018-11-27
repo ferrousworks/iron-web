@@ -1,0 +1,17 @@
+<% content_for :browser_title, "Iron - Resend Unlock Instructions" %>
+<% content_for :page_header, "Resend Unlock Instructions" %>
+<% content_for :page_types, :splash %>
+
+<%= form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f| %>
+  <%= devise_error_messages! %>
+
+  <div class="field">
+    <%= f.label :email %><br />
+    <%= f.email_field :email, autofocus: true %>
+  </div>
+
+  <section class="call-to-action btn-group">
+    <%= f.submit "Resend", class: "btn btn-link link-primary" %>
+    <%= render "accounts/shared/links" %>
+  </section>
+<% end %>

@@ -1,0 +1,9 @@
+.page-title {
+  color: white;
+  text-transform: uppercase;
+  font-size: 78px;
+}
+
+.page-title strong {
+  background-color: var(--secondary);
+}

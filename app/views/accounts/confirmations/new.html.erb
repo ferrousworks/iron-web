@@ -1,0 +1,21 @@
+<% content_for :browser_title, "Iron - Resend Email Confirmation" %>
+<% content_for :page_header, "Resend Email Confirmation" %>
+<% content_for :page_types, :splash %>
+
+<%= form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f| %>
+  <% resource.errors.full_messages.each do |message| %>
+    <section class="alert alert-danger" role="alert">
+      <%= message %>!
+    </section>
+  <% end %>
+
+  <section class="form-group">
+    <%= f.label :email %>
+    <%= f.email_field :email, autofocus: true, value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email), class: "form-control" %>
+  </section>
+
+  <section class="call-to-action btn-group">
+    <%= f.submit "Resend", class: "btn btn-link link-primary" %>
+    <%= render "accounts/shared/links" %>
+  </section>
+<% end %>
