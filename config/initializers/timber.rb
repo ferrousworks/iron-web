@@ -8,4 +8,3 @@ config.integrations.action_view.silence = Rails.env.production?
 #
 # For a full list of configuration options see:
 # http://www.rubydoc.info/github/timberio/timber-ruby/Timber/Config
-

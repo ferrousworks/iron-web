@@ -113,9 +113,9 @@ module Iron
 
       # Log the request id of the request, supplied by the infrastructure
       ->(request) do
-         if request.request_id.present?
+        if request.request_id.present?
           "context-id=#{request.request_id}"
-         end
+        end
       end
     ]
 

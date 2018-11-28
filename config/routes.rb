@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   devise_for(:accounts)
 
-  authenticate :account, -> (account) {account.administrator?} do
+  authenticate :account, ->(account) {account.administrator?} do
     mount(Flipper::UI.app(Flipper) => "/admin/flipper")
     mount(Sidekiq::Web => "/admin/sidekiq")
   end

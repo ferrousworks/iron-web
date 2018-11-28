@@ -34,7 +34,6 @@ PaperTrail.request(:whodunnit => Account::MACHINE_ID, :controller_info => {:cont
       end
     end
 
-
     if Rails.env.production? && Account.count.zero?
       krainboltgreene = Account.create!(
         :username => "krainboltgreene",

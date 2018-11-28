@@ -27,6 +27,7 @@ class RequestErrorHandlingOperation < ApplicationOperation
   end
   def notify_bugsnag(state:)
     return unless Rails.env.production?
+
     if state.controller.account_signed_in?
       Bugsnag.before_notify_callbacks << ->(report) do
         report.user = {

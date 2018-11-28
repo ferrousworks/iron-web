@@ -1,3 +1,2 @@
 namespace :db do
-
 end

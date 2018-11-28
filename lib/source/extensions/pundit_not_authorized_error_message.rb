@@ -7,7 +7,7 @@ module PunditNotAuthorizedErrorMessage
       @record = options[:record]
       @policy = options[:policy]
 
-      message = options.fetch(:message) { "#{@policy.class.name}##{query} returned false for a #{record.class.name}" }
+      message = options.fetch(:message) {"#{@policy.class.name}##{query} returned false for a #{record.class.name}"}
     end
 
     super(message)
